@@ -57,6 +57,7 @@ header {
 }
 
 .navbar-links {
+  display: flex;
   margin-left: 93px;
 }
 
@@ -81,10 +82,6 @@ header {
   color: var(--selection-color);
 }
 
-.navbar-links {
-  display: flex;
-}
-
 .navbar-link {
   display: block;
   padding-top: 32px;
@@ -94,8 +91,17 @@ header {
   font-style: normal;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+/*
+.transition {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}*/
+/*
+.navbar-list {
+  
+}
+*/
 .current,
 .navbar-list .navbar-link:hover,
 .navbar-list .navbar-link:focus {
@@ -125,6 +131,7 @@ header {
   letter-spacing: 0.02em;
   text-decoration: none;
   padding: 32px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact:hover,
@@ -220,6 +227,9 @@ header {
   border-radius: 4px;
   padding: 6px 22px;
   border: 0px solid transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current-button,
@@ -427,6 +437,8 @@ img {
   align-items: center;
   justify-content: center;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .command-links {
@@ -454,13 +466,14 @@ img {
 }
 
 .clients-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   fill: #afb1b8;
   width: 170px;
   height: 92px;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover svg,
@@ -516,6 +529,7 @@ img {
   width: 370px;
   margin-top: 30px;
   margin-left: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-link.image {
@@ -586,6 +600,7 @@ img {
 .address-contact {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-contact:hover,
@@ -625,6 +640,8 @@ img {
   justify-content: center;
   fill: #ffffff;
   background: rgba(255, 255, 255, 0.1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join-icon:hover svg,
@@ -646,4 +663,32 @@ img {
   justify-content: center;
   padding: 0;
   margin: 0;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/**/
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: scroll;
 }
